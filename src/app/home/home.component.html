@@ -1,0 +1,41 @@
+<p class="display-1 text-center text-info">Home</p>
+
+<!-- <table class="table">
+    <thead>
+    <tr>
+        <th>UserId</th>
+        <th>ID</th>
+        <th>Title</th>
+        <th>body</th>
+    </tr>
+    </thead>
+
+    <tbody>
+
+        @for(post of posts;track post.id){
+            <tr>
+                <td>{{post.userId}}</td>
+                <td>{{post.id}}</td>
+                <td>{{post.title}}</td>
+                <td>{{post.body}}</td>
+            </tr>
+        }
+    </tbody>
+</table> -->
+
+<select class="bg-dark p-2 text-light mx-auto mt-4" id="dropdown">
+    <option value="">Select User Id</option>
+    <!-- @for(da of data; track da.id){
+        <option [value]="da.id" (click)="display()">{{da.id}}</option>
+    } -->
+    <option [value]="da.id" *ngFor="let da of data;let i = index">{{da.id}}</option>
+</select>
+ 
+<div class="card shadow-md h-100 ">
+    <img [src]='data[index].avatar' width="200px" height="200px" class="d-block mx-auto p-3" alt="">
+    <div class="card-body">
+        <p class="lead fs-2">{{data[index].first_name}}</p>
+        <p class="lead fs-2">{{data[index].last_name}}</p>
+        <p class="lead fs-2">{{data[index].email}}</p>
+    </div>
+</div>

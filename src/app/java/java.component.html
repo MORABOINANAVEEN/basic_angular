@@ -1,0 +1,41 @@
+<!-- <p class="text-center">java works!</p> -->
+<!-- <p class="text-center">{{data | uppercase}}</p>
+<p class="text-center">{{data | lowercase}}</p>
+<p class="text-center">{{data | titlecase}}</p>
+<p class="text-center">{{rupee | currency:'INR'}}</p>
+<p class="text-center">{{per | percent}}</p>
+<p class="text-center">{{person | json}}</p>
+<p class="text-center">{{current | date:'fullDate'}}</p>
+<p class="text-center">{{sampleData | number:'1.1-2'}}</p> -->
+
+<div>
+<table class="container w-75 table text-center table-bordered">
+ 
+    <thead>
+        <tr>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+     
+     
+    <tbody>
+        <tr *ngFor = "let s of data">
+        <td>{{s.name}}</td>    
+        <td>{{s.price}}</td>    
+        <td>
+            <button class="bg-danger" (click) = "decreaseAmount(s.id)">-</button>
+            {{s.selectedQuantity()}}
+            <button class="bg-success" (click) = "increaseAmount(s.id)">+</button>
+        </td>    
+        <td>{{s.total()}}</td>    
+        </tr>
+    </tbody>
+     
+    </table>
+     
+</div>
+    <h1 class="text-end">{{totalPrice()}}</h1>
+

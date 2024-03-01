@@ -1,0 +1,42 @@
+<p class="display-3 text-center text-primary">node works!</p>
+
+<input type="text" class="form-control w-50 mx-auto" placeholder="Search by name" [(ngModel)]="searchByName">
+<div class="container mt-5">
+<table class="table text-center">
+    <thead>
+        <tr>
+            <th>UserId</th>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="lead text-center" *ngFor="let user of users$ | async | search : searchByName ">
+            
+            <td>{{user.id}}</td>
+            <td>{{user.name | simple}}</td>
+            <td>{{user.username | titlecase}}</td>
+            <td>{{user.email}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- PipeTransform interface
+transform(){
+//transform logic
+} -->
+
+</div>
+
+<!-- <div>
+    <p class="lead text-center" *ngFor="let user of users$ | async">
+        {{user.username}}
+    </p>  
+</div> -->
+
+<!-- @for(user of users$ |async; track user.id){
+    <p class="text-center">{{user.username}}</p>
+}@empty{
+    <p class="text-danger">NoUsers</p>
+} -->

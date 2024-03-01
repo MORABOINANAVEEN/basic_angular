@@ -1,0 +1,19 @@
+<p class="display-1 text-center text-info">Login</p>
+ 
+<form class="container w-75">
+    <!-- [formGroup] ="user"
+    (ngSubmit) = "onSubmitUser()" -->
+    
+
+<div class="input-group mb-3">
+    <label for="username" class="form-label">Username</label>
+     <input type="text" formControlName="username" id="username" class="form-control" />
+</div>
+
+<div class="input-group mb-3">
+    <label for="password" class="form-label">Password</label>
+     <input type="password" formControlName="password" id="password" class="form-control" />
+</div>
+
+<button type="submit" class="btn btn-success d-block mx-auto"></button>
+</form>
